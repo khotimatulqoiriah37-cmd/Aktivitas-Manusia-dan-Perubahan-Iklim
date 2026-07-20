@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPI IPS Kelas 8 - Faktor Aktivitas Manusia Terhadap Perubahan Iklim</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Fredoka for playful yet academic look -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0fdf4;
+        }
+        .heading-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between text-slate-800">
+
+    <!-- Top Navigation Header -->
+    <header class="bg-emerald-700 text-white shadow-md sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-yellow-400 p-2 rounded-lg text-emerald-900 shadow">
+                    <i class="fa-solid fa-school text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="heading-font text-lg md:text-xl font-semibold tracking-wide">SMP Muhammadiyah 2 Depok</h1>
+                    <p class="text-xs text-emerald-100">Sleman, DI Yogyakarta | IPS Kelas 8</p>
+                </div>
+            </div>
+            <!-- Menu Toggles for Mobile -->
+            <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                <span class="bg-emerald-800 px-3 py-1 rounded-full text-xs font-semibold text-yellow-300 border border-emerald-600">
+                    <i class="fa-solid fa-leaf animate-bounce mr-1"></i> Tema: Perubahan Iklim
+                </span>
+            </div>
+        </div>
+        <!-- Main Navigation Tabs -->
+        <nav class="bg-emerald-800 border-t border-emerald-900">
+            <div class="max-w-7xl mx-auto px-2 flex overflow-x-auto whitespace-nowrap no-scrollbar justify-around md:justify-center md:space-x-8">
+                <button onclick="switchTab('beranda')" id="tab-beranda" class="nav-btn py-3 px-4 text-sm font-semibold transition-all flex items-center gap-2 border-b-4 border-yellow-400 text-yellow-300">
+                    <i class="fa-solid fa-house"></i> Beranda
+                </button>
+                <button onclick="switchTab('tujuan')" id="tab-tujuan" class="nav-btn py-3 px-4 text-sm font-semibold transition-all flex items-center gap-2 border-b-4 border-transparent text-emerald-100 hover:text-white">
+                    <i class="fa-solid fa-bullseye"></i> Tujuan Pembelajaran
+                </button>
+                <button onclick="switchTab('materi')" id="tab-materi" class="nav-btn py-3 px-4 text-sm font-semibold transition-all flex items-center gap-2 border-b-4 border-transparent text-emerald-100 hover:text-white">
+                    <i class="fa-solid fa-book-open"></i> Eksplorasi Materi
+                </button>
+                <button onclick="switchTab('simulasi')" id="tab-simulasi" class="nav-btn py-3 px-4 text-sm font-semibold transition-all flex items-center gap-2 border-b-4 border-transparent text-emerald-100 hover:text-white">
+                    <i class="fa-solid fa-flask"></i> Simulasi Iklim
+                </button>
+                <button onclick="switchTab('kuis')" id="tab-kuis" class="nav-btn py-3 px-4 text-sm font-semibold transition-all flex items-center gap-2 border-b-4 border-transparent text-emerald-100 hover:text-white">
+                    <i class="fa-solid fa-gamepad"></i> Kuis Interaktif
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6">
+
+        <!-- Tab: Beranda -->
+        <section id="page-beranda" class="tab-content block space-y-6">
+            <div class="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 text-white rounded-3xl p-6 md:p-10 shadow-xl relative overflow-hidden">
+                <!-- Background decorative elements -->
+                <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-white/10 rounded-full blur-2xl"></div>
+                <div class="absolute right-1/4 -top-8 w-40 h-40 bg-yellow-300/20 rounded-full blur-xl animate-pulse"></div>
+
+                <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                    <div class="md:col-span-2 space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-yellow-400 text-emerald-900 font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest inline-block shadow-sm">
+                                <i class="fa-solid fa-star mr-1"></i> Media Pembelajaran Interaktif
+                            </span>
+                            <span class="bg-emerald-900/60 border border-emerald-400 text-yellow-300 font-bold px-4 py-1.5 rounded-full text-xs inline-block shadow-sm">
+                                <i class="fa-solid fa-user-tie mr-1"></i> Guru Pengampu: Khotimatul Qoiriah, S.Pd
+                            </span>
+                        </div>
+                        <h2 class="heading-font text-3xl md:text-5xl font-bold leading-tight">
+                            Bagaimana Aktivitas Kita Mengubah Wajah Bumi?
+                        </h2>
+                        <p class="text-emerald-50 text-sm md:text-base leading-relaxed max-w-xl">
+                            Selamat datang, siswa hebat kelas 8 SMP Muhammadiyah 2 Depok! Bersama aplikasi ini, kita akan menjelajahi bagaimana tindakan harian manusia memicu perubahan iklim global. Siap menjadi agen penyelamat bumi? Yuk, mulai petualanganmu!
+                        </p>
+                        <div class="flex flex-wrap gap-3 pt-2">
+                            <button onclick="switchTab('materi')" class="bg-yellow-400 hover:bg-yellow-300 text-emerald-950 font-bold px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                                <i class="fa-solid fa-play"></i> Mulai Belajar
+                            </button>
+                            <button onclick="switchTab('simulasi')" class="bg-emerald-900/40 hover:bg-emerald-900/60 border border-emerald-400 text-emerald-100 font-semibold px-6 py-3 rounded-2xl hover:text-white transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-wind animate-spin"></i> Coba Simulasi
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-center">
+                        <div class="relative w-64 h-64 flex items-center justify-center">
+                            <!-- SVG Animated Earth -->
+                            <svg class="w-full h-full animate-[spin_60s_linear_infinite]" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" fill="#2563eb"/>
+                                <path d="M 20 50 Q 30 30 50 20 Q 70 30 80 50 Q 70 70 50 80 Q 30 70 20 50" fill="#10b981"/>
+                                <path d="M 40 15 Q 45 30 60 40 Q 75 30 85 15" fill="#059669"/>
+                                <path d="M 15 65 Q 25 75 35 60 Q 45 55 50 70" fill="#059669"/>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <span class="text-5xl drop-shadow-md">🌍</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-emerald-100 transition-all flex gap-4">
+                    <div class="bg-emerald-100 text-emerald-700 p-4 rounded-xl h-fit">
+                        <i class="fa-solid fa-book-open text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="heading-font font-bold text-lg mb-1">Eksplorasi Kaya Visual</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Dilengkapi infografis interaktif dan materi berbasis aktivitas yang mudah dicerna untuk memacu berpikir kritis.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-emerald-100 transition-all flex gap-4">
+                    <div class="bg-cyan-100 text-cyan-700 p-4 rounded-xl h-fit">
+                        <i class="fa-solid fa-chart-line text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="heading-font font-bold text-lg mb-1">Simulasi Real-time</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Uji coba skenario kehidupan nyata! Geser tingkat emisi bahan bakar fosil dan lihat seberapa cepat es kutub mencair.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md border border-emerald-100 transition-all flex gap-4">
+                    <div class="bg-purple-100 text-purple-700 p-4 rounded-xl h-fit">
+                        <i class="fa-solid fa-trophy text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="heading-font font-bold text-lg mb-1">Evaluasi Seru (Kuis)</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Kuis 10 level interaktif tanpa bosan dengan jenis pertanyaan variatif untuk mengukur pemahaman terbaikmu.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profil Section -->
+            <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-3 text-center sm:text-left">
+                    <span class="text-3xl">🧑‍🏫</span>
+                    <div>
+                        <h4 class="font-bold text-emerald-950">Guru Pengampu: Khotimatul Qoiriah, S.Pd</h4>
+                        <p class="text-xs text-slate-500">Mata Pelajaran: Ilmu Pengetahuan Sosial (IPS) | Tema 2: Kemajemukan Masyarakat Indonesia (Perubahan Iklim)</p>
+                    </div>
+                </div>
+                <div class="text-xs text-emerald-800 bg-emerald-100 px-3 py-1.5 rounded-lg font-semibold text-center">
+                    SMP Muhammadiyah 2 Depok Sleman
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Tujuan Pembelajaran -->
+        <section id="page-tujuan" class="tab-content hidden space-y-6">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="heading-font text-3xl font-bold text-emerald-800">Apa Target Belajar Kita Hari Ini?</h2>
+                <p class="text-sm text-slate-600">Melalui media interaktif ini, kamu diharapkan dapat menguasai kompetensi penting terkait konsep perubahan iklim secara mendalam.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-6 border-t-4 border-emerald-500 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="bg-emerald-50 text-emerald-600 w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold">1</div>
+                        <h4 class="heading-font font-bold text-slate-800">Memahami Pengertian</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Siswa mampu menjelaskan pengertian perubahan iklim secara ilmiah serta membedakannya dengan fenomena perubahan cuaca harian.</p>
+                    </div>
+                    <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded w-fit mt-4">Pemahaman - C2</span>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-6 border-t-4 border-yellow-500 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="bg-yellow-50 text-yellow-600 w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold">2</div>
+                        <h4 class="heading-font font-bold text-slate-800">Menganalisis Penyebab</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Siswa mampu mengidentifikasi dan menganalisis berbagai aktivitas manusia (industri, energi, pertanian, deforestasi) sebagai penyebab utama penumpukan Gas Rumah Kaca.</p>
+                    </div>
+                    <span class="text-xs font-semibold text-yellow-600 bg-yellow-50 px-2 py-1 rounded w-fit mt-4">Analisis - C4</span>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-6 border-t-4 border-blue-500 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 text-blue-600 w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold">3</div>
+                        <h4 class="heading-font font-bold text-slate-800">Mengevaluasi Dampak</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Siswa mampu mengevaluasi dampak destruktif perubahan iklim bagi kehidupan masyarakat dunia dan Indonesia di bidang pangan, maritim, dan kelangsungan ekosistem.</p>
+                    </div>
+                    <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded w-fit mt-4">Evaluasi - C5</span>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-6 border-t-4 border-purple-500 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="bg-purple-50 text-purple-600 w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold">4</div>
+                        <h4 class="heading-font font-bold text-slate-800">Merumuskan Solusi</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Siswa mampu merumuskan cara mengatasi perubahan iklim melalui tindakan mitigasi dan adaptasi praktis di lingkungan sekolah dan rumah.</p>
+                    </div>
+                    <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-2 py-1 rounded w-fit mt-4">Aksi Nyata - C6</span>
+                </div>
+            </div>
+
+            <!-- Fun Quote Card -->
+            <div class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white p-6 rounded-2xl text-center shadow">
+                <p class="italic text-sm md:text-base">"Kita tidak mewarisi bumi ini dari leluhur kita, melainkan kita meminjamnya dari anak cucu kita."</p>
+                <span class="text-xs font-bold block mt-2 text-emerald-100">— Pepatah Bijak Lingkungan</span>
+            </div>
+        </section>
+
+        <!-- Tab: Materi Pembelajaran -->
+        <section id="page-materi" class="tab-content hidden space-y-6">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="heading-font text-3xl font-bold text-emerald-800">Eksplorasi Detektif Lingkungan</h2>
+                <p class="text-sm text-slate-600">Klik tab di bawah ini untuk mempelajari pilar-pilar penting dalam materi perubahan iklim global.</p>
+            </div>
+
+            <!-- Sub-Tabs for Material -->
+            <div class="flex flex-wrap justify-center gap-2 border-b border-slate-200 pb-3">
+                <button onclick="switchMateriTab('pengertian')" id="mat-btn-pengertian" class="mat-tab-btn px-4 py-2 text-xs md:text-sm font-semibold rounded-xl transition-all bg-emerald-600 text-white shadow">
+                    🌍 1. Pengertian
+                </button>
+                <button onclick="switchMateriTab('penyebab')" id="mat-btn-penyebab" class="mat-tab-btn px-4 py-2 text-xs md:text-sm font-semibold rounded-xl transition-all bg-white text-slate-600 hover:bg-slate-50 border">
+                    🔥 2. Penyebab
+                </button>
+                <button onclick="switchMateriTab('dampak')" id="mat-btn-dampak" class="mat-tab-btn px-4 py-2 text-xs md:text-sm font-semibold rounded-xl transition-all bg-white text-slate-600 hover:bg-slate-50 border">
+                    ⚠️ 3. Dampak
+                </button>
+                <button onclick="switchMateriTab('solusi')" id="mat-btn-solusi" class="mat-tab-btn px-4 py-2 text-xs md:text-sm font-semibold rounded-xl transition-all bg-white text-slate-600 hover:bg-slate-50 border">
+                    🛡️ 4. Cara Mengatasi
+                </button>
+            </div>
+
+            <!-- Materi Content Panel -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm">
+                
+                <!-- Sub-Tab Content: Pengertian -->
+                <div id="materi-pengertian" class="materi-panel block space-y-6 animate-fadeIn">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div class="space-y-4">
+                            <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                                Konsep Dasar
+                            </span>
+                            <h3 class="heading-font text-2xl font-bold text-slate-800">Apa itu Perubahan Iklim?</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                <strong>Perubahan iklim</strong> adalah perubahan signifikan pada iklim bumi, suhu udara, dan pola curah hujan dalam jangka waktu yang sangat lama, mulai dari puluhan hingga jutaan tahun. Fenomena ini ditandai dengan meningkatnya suhu rata-rata permukaan bumi secara global (pemanasan global).
+                            </p>
+                            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl">
+                                <h4 class="font-bold text-sm text-blue-800 mb-1">💡 Beda Cuaca vs Iklim</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    <strong>Cuaca</strong> adalah kondisi atmosfer harian di daerah sempit (misalnya: Sleman hari ini hujan deras). Sedangkan <strong>Iklim</strong> adalah rata-rata cuaca di wilayah yang luas dalam kurun waktu minimal 30 tahun (misalnya: Indonesia beriklim tropis).
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 text-center space-y-3">
+                                <span class="text-6xl animate-pulse inline-block">☀️ 🌧️ 🌡️ 🌀</span>
+                                <h4 class="heading-font font-semibold text-slate-700">Keseimbangan Alam yang Terganggu</h4>
+                                <p class="text-xs text-slate-500">Perubahan iklim merusak pola alami angin, arus laut, dan uap air di atmosfer secara permanen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub-Tab Content: Penyebab -->
+                <div id="materi-penyebab" class="materi-panel hidden space-y-6 animate-fadeIn">
+                    <div class="text-center max-w-xl mx-auto mb-4">
+                        <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                            Aktivitas Manusia & Efek Rumah Kaca
+                        </span>
+                        <h3 class="heading-font text-2xl font-bold text-slate-800 mt-2">Aktivitas Manusia yang Memicu Perubahan Iklim</h3>
+                        <p class="text-xs text-slate-500 mt-1">Hampir seluruh aktivitas modern kita sehari-hari melepaskan Gas Rumah Kaca (GRK) yang menyelimuti atmosfer bumi.</p>
+                    </div>
+
+                    <!-- Grid Aktivitas Manusia -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Sektor 1: Energi & Transportasi -->
+                        <div class="bg-rose-50/50 p-5 rounded-2xl border border-rose-100 flex gap-4">
+                            <div class="bg-rose-100 text-rose-700 p-3 rounded-xl h-fit text-2xl">
+                                🚗
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-sm text-rose-950">1. Sektor Energi & Transportasi</h4>
+                                <p class="text-[11px] text-slate-600 leading-relaxed">
+                                    <strong>Aktivitas Nyata:</strong> Menggunakan kendaraan bermotor pribadi untuk bepergian jarak dekat (malas berjalan kaki/bersepeda), membiarkan lampu atau kipas angin menyala kosong di kelas, serta menyalakan penyejuk udara (AC) secara berlebihan.
+                                </p>
+                                <span class="inline-block text-[10px] bg-rose-100 text-rose-800 px-2 py-0.5 rounded font-semibold">
+                                    Dampak: Melepaskan gas Karbon Dioksida (CO₂) dari pembakaran bahan bakar fosil
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Sektor 2: Kehutanan & Penggunaan Lahan -->
+                        <div class="bg-amber-50/50 p-5 rounded-2xl border border-amber-150 flex gap-4">
+                            <div class="bg-amber-100 text-amber-700 p-3 rounded-xl h-fit text-2xl">
+                                🪓
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-sm text-amber-950">2. Deforestasi & Alih Fungsi Lahan</h4>
+                                <p class="text-[11px] text-slate-600 leading-relaxed">
+                                    <strong>Aktivitas Nyata:</strong> Menebang hutan tanpa izin (*illegal logging*) untuk diambil kayunya, serta membakar kawasan hutan gambut secara sengaja untuk pembukaan perkebunan kelapa sawit skala besar.
+                                </p>
+                                <span class="inline-block text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-semibold">
+                                    Dampak: Menghilangkan penyerap CO₂ alami & melepas cadangan karbon ke udara
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Sektor 3: Pertanian & Peternakan Modern -->
+                        <div class="bg-emerald-50/50 p-5 rounded-2xl border border-emerald-100 flex gap-4">
+                            <div class="bg-emerald-100 text-emerald-700 p-3 rounded-xl h-fit text-2xl">
+                                🐄
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-sm text-emerald-950">3. Sektor Pertanian & Peternakan</h4>
+                                <p class="text-[11px] text-slate-600 leading-relaxed">
+                                    <strong>Aktivitas Nyata:</strong> Pemeliharaan sapi pedaging skala industri (menghasilkan kotoran & gas pencernaan), penggunaan pupuk kimia sintetis berlebih di sawah, serta membakar jerami sisa panen padi.
+                                </p>
+                                <span class="inline-block text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-semibold">
+                                    Dampak: Menghasilkan gas Metana (CH₄) & Nitrogen Oksida (N₂O) berkekuatan tinggi
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Sektor 4: Sampah & Aktivitas Rumah Tangga -->
+                        <div class="bg-blue-50/50 p-5 rounded-2xl border border-blue-150 flex gap-4">
+                            <div class="bg-blue-100 text-blue-700 p-3 rounded-xl h-fit text-2xl">
+                                🗑️
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-sm text-blue-950">4. Pola Konsumsi & Sampah Domestik</h4>
+                                <p class="text-[11px] text-slate-600 leading-relaxed">
+                                    <strong>Aktivitas Nyata:</strong> Menyisakan makanan (*food waste*) hingga membusuk di tempat sampah, penggunaan plastik sekali pakai yang masif, serta membakar tumpukan sampah plastik di halaman rumah.
+                                </p>
+                                <span class="inline-block text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded font-semibold">
+                                    Dampak: Pembusukan sampah menghasilkan gas Metana (CH₄) di TPA
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Penjelasan Mekanisme Efek Rumah Kaca -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                        <div class="md:col-span-2 space-y-2">
+                            <h4 class="font-bold text-sm text-slate-800 flex items-center gap-2">
+                                <span class="text-lg">🏠</span> Mekanisme Efek Rumah Kaca (Greenhouse Effect)
+                            </h4>
+                            <p class="text-[11px] text-slate-600 leading-relaxed">
+                                Gas-gas buangan dari aktivitas manusia di atas naik dan menumpuk di atmosfer membentuk lapisan tebal selayaknya dinding kaca rumah tanaman. Saat radiasi panas matahari masuk ke bumi, panas tersebut terperangkap di dalam dan tidak bisa memantul kembali ke luar angkasa. Akibatnya, suhu bumi memanas secara global.
+                            </p>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border text-center">
+                            <span class="text-4xl block animate-bounce">☀️ ➡️ 🌡️ ⬅️ 🌍</span>
+                            <span class="text-[10px] font-semibold text-slate-400 block mt-1">Suhu Global Meningkat Tajam</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub-Tab Content: Dampak -->
+                <div id="materi-dampak" class="materi-panel hidden space-y-6 animate-fadeIn">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div class="space-y-4">
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                                Bahaya Nyata
+                            </span>
+                            <h3 class="heading-font text-2xl font-bold text-slate-800">Dampak Buruk Bagi Kehidupan</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Peningkatan suhu bumi yang tidak terkontrol melahirkan berbagai ancaman ekstrem bagi manusia dan ekosistem:
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-600">
+                                <div class="bg-rose-50 p-3 rounded-xl border border-rose-100">
+                                    <span class="font-bold text-rose-800 block">🌡️ Ekstrem & Anomali Cuaca</span>
+                                    Hujan terlalu lebat memicu banjir bandang, sementara kemarau yang terlalu panjang memicu kekeringan parah.
+                                </div>
+                                <div class="bg-blue-50 p-3 rounded-xl border border-blue-100">
+                                    <span class="font-bold text-blue-800 block">🏔️ Pencairan Es Kutub</span>
+                                    Mencairnya es abadi di Kutub Utara dan Selatan memicu kenaikan permukaan air laut global.
+                                </div>
+                                <div class="bg-amber-50 p-3 rounded-xl border border-amber-100">
+                                    <span class="font-bold text-amber-800 block">🌾 Krisis Pangan & Pertanian</span>
+                                    Pergeseran musim hujan dan kemarau yang kacau menyebabkan para petani di Indonesia sering gagal panen.
+                                </div>
+                                <div class="bg-purple-50 p-3 rounded-xl border border-purple-100">
+                                    <span class="font-bold text-purple-800 block">🦟 Penyebaran Penyakit</span>
+                                    Suhu yang menghangat mempermudah perkembangbiakan vektor penyakit seperti nyamuk demam berdarah (DBD) dan malaria.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-center">
+                                <span class="text-6xl inline-block animate-bounce">🥵🌧️🌊🌾❌</span>
+                                <p class="text-xs text-slate-400 mt-2">Dampak nyata perubahan iklim di sekitar kita</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub-Tab Content: Solusi -->
+                <div id="materi-solusi" class="materi-panel hidden space-y-6 animate-fadeIn">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div class="space-y-4">
+                            <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                                Aksi Penyelamatan
+                            </span>
+                            <h3 class="heading-font text-2xl font-bold text-slate-800">Bagaimana Cara Mengatasinya?</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Kita semua bisa mengambil peran aktif untuk memperlambat laju perubahan iklim global melalui tindakan nyata (Mitigasi & Adaptasi) berikut ini:
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-start gap-2 text-xs">
+                                    <span class="bg-emerald-100 text-emerald-800 p-1 rounded-md font-bold">1</span>
+                                    <p class="text-slate-600 leading-relaxed"><strong>Hemat Energi Listrik:</strong> Mematikan lampu, komputer, dan kipas angin di kelas atau kamar jika tidak digunakan.</p>
+                                </div>
+                                <div class="flex items-start gap-2 text-xs">
+                                    <span class="bg-emerald-100 text-emerald-800 p-1 rounded-md font-bold">2</span>
+                                    <p class="text-slate-600 leading-relaxed"><strong>Terapkan 3R (Reduce, Reuse, Recycle):</strong> Mengurangi pemakaian plastik sekali pakai, membawa tumbler ke sekolah, dan mengolah sampah organik menjadi pupuk kompos.</p>
+                                </div>
+                                <div class="flex items-start gap-2 text-xs">
+                                    <span class="bg-emerald-100 text-emerald-800 p-1 rounded-md font-bold">3</span>
+                                    <p class="text-slate-600 leading-relaxed"><strong>Reboisasi & Penghijauan:</strong> Menanam pohon di sekitar lingkungan sekolah SMP Muhammadiyah 2 Depok atau pekarangan rumah untuk menyerap CO₂.</p>
+                                </div>
+                                <div class="flex items-start gap-2 text-xs">
+                                    <span class="bg-emerald-100 text-emerald-800 p-1 rounded-md font-bold">4</span>
+                                    <p class="text-slate-600 leading-relaxed"><strong>Kurangi Kendaraan Bermotor pribadi:</strong> Berjalan kaki, bersepeda, atau menggunakan angkutan umum jika jarak tempuh dekat.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-100 text-center">
+                                <span class="text-6xl inline-block">🚲 🔋 🌳 ♻️</span>
+                                <p class="text-xs text-emerald-800 mt-2 font-semibold">"Langkah Kecil Kita, Penyelamat Bumi Masa Depan!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tab: Simulasi Iklim -->
+        <section id="page-simulasi" class="tab-content hidden space-y-6">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="heading-font text-3xl font-bold text-emerald-800">Laboratorium Simulasi Iklim Global</h2>
+                <p class="text-sm text-slate-600">Geser panel kontrol aktivitas manusia di bawah ini dan perhatikan reaksi Bumi secara real-time!</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Control Panel (Sliders) -->
+                <div class="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm space-y-6">
+                    <h3 class="heading-font font-bold text-lg text-slate-800 flex items-center gap-2 border-b pb-2">
+                        <i class="fa-solid fa-sliders text-emerald-600"></i> Kontrol Aktivitas Manusia
+                    </h3>
+
+                    <!-- Slider 1 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold text-slate-700">
+                            <span>🚗 Transportasi & Industri (CO₂)</span>
+                            <span id="val-fosil" class="text-emerald-600">Sedang</span>
+                        </div>
+                        <input type="range" id="slide-fosil" min="1" max="3" value="2" oninput="updateSimulation()" class="w-full accent-emerald-600 h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-[10px] text-slate-400">
+                            <span>Sedikit (Jalan Kaki)</span>
+                            <span>Banyak (Bakar Fosil)</span>
+                        </div>
+                    </div>
+
+                    <!-- Slider 2 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold text-slate-700">
+                            <span>🪓 Penebangan Hutan (Deforestasi)</span>
+                            <span id="val-hutan" class="text-emerald-600">Sedang</span>
+                        </div>
+                        <input type="range" id="slide-hutan" min="1" max="3" value="2" oninput="updateSimulation()" class="w-full accent-emerald-600 h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-[10px] text-slate-400">
+                            <span>Hutan Lestari</span>
+                            <span>Gundul & Dibakar</span>
+                        </div>
+                    </div>
+
+                    <!-- Slider 3 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs font-semibold text-slate-700">
+                            <span>🐄 Peternakan & Pertanian</span>
+                            <span id="val-ternak" class="text-emerald-600">Sedang</span>
+                        </div>
+                        <input type="range" id="slide-ternak" min="1" max="3" value="2" oninput="updateSimulation()" class="w-full accent-emerald-600 h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-[10px] text-slate-400">
+                            <span>Secukupnya</span>
+                            <span>Skala Sangat Besar</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-50 p-4 rounded-xl text-xs text-slate-600 leading-relaxed space-y-1">
+                        <span class="font-bold text-emerald-800 block">💡 Tips Eksperimen:</span>
+                        Ubah semua panel ke tingkat "Banyak/Gundul" untuk melihat bencana iklim terburuk, lalu turunkan semuanya untuk memulihkan bumi kembali subur dan hijau!
+                    </div>
+                </div>
+
+                <!-- Visual Output (Earth Reaction) -->
+                <div class="lg:col-span-2 bg-white rounded-3xl p-6 border border-slate-100 shadow-sm flex flex-col justify-between space-y-6">
+                    <div class="flex justify-between items-center border-b pb-3">
+                        <h3 class="heading-font font-bold text-lg text-slate-800">📊 Status Bumi</h3>
+                        <span id="status-badge" class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full font-bold">Bumi Sedang Hangat</span>
+                    </div>
+
+                    <!-- Real-time dynamic visuals -->
+                    <div class="flex flex-col md:flex-row items-center justify-around py-4 gap-6">
+                        <!-- Simulated Earth Illustration -->
+                        <div class="text-center relative">
+                            <div id="sim-earth-emoji" class="text-8xl md:text-9xl filter transition-all duration-500 transform hover:scale-110 select-none">
+                                😐
+                            </div>
+                            <div class="text-xs text-slate-400 mt-3 font-semibold uppercase tracking-wider" id="sim-earth-desc">BUMI BIASA SAJA</div>
+                        </div>
+
+                        <!-- Data Dashboard -->
+                        <div class="space-y-4 w-full md:w-64">
+                            <!-- Temp Gauge -->
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <div class="flex justify-between text-xs text-slate-500 mb-1">
+                                    <span>🌡️ Kenaikan Suhu Global</span>
+                                    <span id="sim-temp" class="font-bold text-amber-600">+1.2 °C</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                                    <div id="sim-temp-bar" class="bg-amber-500 h-full transition-all duration-500" style="width: 40%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Ice Sheet Gauge -->
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <div class="flex justify-between text-xs text-slate-500 mb-1">
+                                    <span>🏔️ Es Kutub Mencair</span>
+                                    <span id="sim-ice" class="font-bold text-cyan-600">30%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                                    <div id="sim-ice-bar" class="bg-cyan-400 h-full transition-all duration-500" style="width: 30%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Forest Gauge -->
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <div class="flex justify-between text-xs text-slate-500 mb-1">
+                                    <span>🌳 Luas Hutan Tropis</span>
+                                    <span id="sim-forest" class="font-bold text-emerald-600">70%</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-3 rounded-full overflow-hidden">
+                                    <div id="sim-forest-bar" class="bg-emerald-500 h-full transition-all duration-500" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Impact Analysis Statement -->
+                    <div class="bg-rose-50 border border-rose-100 p-4 rounded-2xl text-xs md:text-sm text-slate-700 leading-relaxed flex items-start gap-3">
+                        <span class="text-xl">⚠️</span>
+                        <div>
+                            <span class="font-bold text-rose-800 block mb-0.5">Analisis Dampak Simulasi:</span>
+                            <span id="sim-analysis">Suhu bumi yang meningkat ini menyebabkan cuaca sulit diprediksi, curah hujan ekstrem pemicu banjir di Sleman, serta ancaman gagal panen padi bagi petani.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real-World Examples in Indonesia Widget -->
+            <div class="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm space-y-4">
+                <h3 class="heading-font font-bold text-xl text-emerald-950 flex items-center gap-2 border-b pb-2">
+                    <i class="fa-solid fa-earth-asia text-emerald-600"></i> Studi Kasus Nyata Dampak Aktivitas Manusia di Indonesia
+                </h3>
+                <p class="text-xs text-slate-500">Klik setiap wilayah di bawah ini untuk melihat bukti nyata perubahan iklim yang disebabkan oleh aktivitas manusia di tanah air kita:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Kasus 1 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-150 flex flex-col justify-between">
+                        <div>
+                            <span class="text-2xl">🌊</span>
+                            <h4 class="font-bold text-sm text-slate-800 mt-2">Pesisir Demak & Jakarta</h4>
+                            <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                                <strong>Aktivitas Manusia:</strong> Alih fungsi lahan pesisir menjadi industri & eksploitasi air tanah berlebih.<br>
+                                <strong>Dampak Nyata:</strong> Kenaikan air laut akibat pemanasan global mempercepat banjir rob harian hingga menenggelamkan beberapa desa pesisir.
+                            </p>
+                        </div>
+                        <span class="text-[10px] font-bold text-rose-600 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded w-fit mt-3">Tenggelamnya Daratan</span>
+                    </div>
+
+                    <!-- Kasus 2 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-150 flex flex-col justify-between">
+                        <div>
+                            <span class="text-2xl">🏔️</span>
+                            <h4 class="font-bold text-sm text-slate-800 mt-2">Puncak Jayawijaya, Papua</h4>
+                            <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                                <strong>Aktivitas Manusia:</strong> Pelepasan emisi gas rumah kaca global dari industri manufaktur dunia.<br>
+                                <strong>Dampak Nyata:</strong> Satu-satunya salju/gletser abadi tropis di Indonesia mencair dengan sangat cepat dan terancam lenyap sepenuhnya.
+                            </p>
+                        </div>
+                        <span class="text-[10px] font-bold text-blue-600 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded w-fit mt-3">Mencairnya Gletser</span>
+                    </div>
+
+                    <!-- Kasus 3 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-150 flex flex-col justify-between">
+                        <div>
+                            <span class="text-2xl">🌾</span>
+                            <h4 class="font-bold text-sm text-slate-800 mt-2">Sleman & DIY (Pertanian)</h4>
+                            <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                                <strong>Aktivitas Manusia:</strong> Penggunaan pupuk kimia sintetis dan pembakaran jerami pasca-panen.<br>
+                                <strong>Dampak Nyata:</strong> Musim tanam bergeser secara ekstrem. Hujan badai yang mendadak disusul kekeringan merusak kualitas komoditas salak pondoh dan padi di lereng Merapi.
+                            </p>
+                        </div>
+                        <span class="text-[10px] font-bold text-amber-600 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded w-fit mt-3">Kekacauan Musim Tanam</span>
+                    </div>
+
+                    <!-- Kasus 4 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-150 flex flex-col justify-between">
+                        <div>
+                            <span class="text-2xl">🔥</span>
+                            <h4 class="font-bold text-sm text-slate-800 mt-2">Sumatra & Kalimantan</h4>
+                            <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">
+                                <strong>Aktivitas Manusia:</strong> Pembukaan perkebunan skala besar secara ilegal dengan membakar kawasan hutan gambut.<br>
+                                <strong>Dampak Nyata:</strong> Kebakaran hutan hebat menghasilkan jutaan ton emisi CO₂, menyumbat paru-paru dunia, serta menimbulkan bencana kabut asap parah.
+                            </p>
+                        </div>
+                        <span class="text-[10px] font-bold text-orange-600 bg-orange-50 border border-orange-200 px-2 py-0.5 rounded w-fit mt-3">Karhutla & Kabut Asap</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aktivitas Kelompok: Misi Penyelamat Bumi -->
+            <div class="bg-gradient-to-br from-emerald-800 to-teal-900 text-white rounded-3xl p-6 md:p-8 shadow-lg space-y-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-emerald-700 pb-4">
+                    <div>
+                        <span class="bg-yellow-400 text-emerald-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Aktivitas Kolaboratif</span>
+                        <h3 class="heading-font font-bold text-2xl mt-1 text-yellow-300">🧩 Misi Kelompok: Detektif Penyelamat Iklim</h3>
+                        <p class="text-xs text-emerald-100">Instruksi kerja kelompok untuk kelas 8 SMP Muhammadiyah 2 Depok Sleman.</p>
+                    </div>
+                    <div class="bg-emerald-700/50 border border-emerald-600 px-4 py-2 rounded-xl text-center">
+                        <span class="text-xs text-emerald-200 block">Metode Diskusi</span>
+                        <span class="text-sm font-bold text-yellow-300">Problem-Based Learning</span>
+                    </div>
+                </div>
+
+                <!-- Langkah-langkah Diskusi -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Langkah 1: Pembagian Peran -->
+                    <div class="bg-emerald-900/40 p-5 rounded-2xl border border-emerald-700 space-y-3">
+                        <h4 class="font-bold text-sm text-yellow-300 flex items-center gap-2">
+                            <span class="bg-emerald-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">1</span>
+                            Bagi Peran Kelompok
+                        </h4>
+                        <p class="text-[11px] text-emerald-100 leading-relaxed">
+                            Bentuk kelompok beranggotakan 3-4 siswa. Pilih peran masing-masing anggota:
+                        </p>
+                        <div class="space-y-1.5 pt-1">
+                            <button onclick="showRoleDuty('ahli-energi')" class="w-full text-left bg-emerald-800/60 hover:bg-emerald-800 p-2 rounded-lg text-xs flex justify-between items-center transition-all">
+                                <span>🚗 Ahli Energi & Transportasi</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </button>
+                            <button onclick="showRoleDuty('ahli-kehutanan')" class="w-full text-left bg-emerald-800/60 hover:bg-emerald-800 p-2 rounded-lg text-xs flex justify-between items-center transition-all">
+                                <span>🌳 Pelindung Hutan</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </button>
+                            <button onclick="showRoleDuty('ahli-pertanian')" class="w-full text-left bg-emerald-800/60 hover:bg-emerald-800 p-2 rounded-lg text-xs flex justify-between items-center transition-all">
+                                <span>🐄 Duta Sampah & Konsumsi</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </button>
+                        </div>
+                        <!-- Role Duty Display Box -->
+                        <div id="role-duty-display" class="bg-emerald-950/80 p-3 rounded-xl border border-emerald-700 text-[10px] text-emerald-200 min-h-[60px] flex items-center justify-center italic text-center">
+                            Klik salah satu peran di atas untuk melihat tugasmu!
+                        </div>
+                    </div>
+
+                    <!-- Langkah 2: Selesaikan Misi Simulasi -->
+                    <div class="bg-emerald-900/40 p-5 rounded-2xl border border-emerald-700 space-y-3">
+                        <h4 class="font-bold text-sm text-yellow-300 flex items-center gap-2">
+                            <span class="bg-emerald-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">2</span>
+                            Eksperimen Simulator
+                        </h4>
+                        <p class="text-[11px] text-emerald-100 leading-relaxed">
+                            Gunakan simulator di atas untuk menyelesaikan 2 tantangan kelompok berikut:
+                        </p>
+                        <div class="space-y-2 text-[10px]">
+                            <div class="bg-emerald-950/50 p-2.5 rounded-xl border border-emerald-800">
+                                <strong class="text-rose-300">💥 Tantangan A (Kiamat Iklim):</strong>
+                                <p class="text-emerald-200 mt-0.5">Ubah semua slider ke tingkat maksimum. Diskusikan apa yang terjadi dengan suhu bumi dan es kutub!</p>
+                            </div>
+                            <div class="bg-emerald-950/50 p-2.5 rounded-xl border border-emerald-800">
+                                <strong class="text-cyan-300">🌱 Tantangan B (Bumi Lestari):</strong>
+                                <p class="text-emerald-200 mt-0.5">Cari kombinasi slider agar kenaikan suhu bumi di bawah +1.0 °C. Catat kombinasi terbaikmu!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Langkah 3: Lembar Refleksi Digital -->
+                    <div class="bg-emerald-900/40 p-5 rounded-2xl border border-emerald-700 space-y-3">
+                        <h4 class="font-bold text-sm text-yellow-300 flex items-center gap-2">
+                            <span class="bg-emerald-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">3</span>
+                            Lembar Kerja Kelompok
+                        </h4>
+                        <p class="text-[11px] text-emerald-100 leading-relaxed">
+                            Isi form laporan di bawah ini berdasarkan hasil diskusi kelompok Anda untuk diserahkan ke Ibu Khotimatul Qoiriah, S.Pd.
+                        </p>
+                        <div class="space-y-2">
+                            <input type="text" id="group-name" placeholder="Nama Kelompok (Contoh: Merbabu)" class="w-full bg-emerald-950/85 border border-emerald-700 rounded-xl p-2 text-xs text-white placeholder-emerald-400 focus:outline-none focus:border-yellow-400">
+                            <textarea id="group-members" placeholder="Nama Anggota Kelompok..." rows="2" class="w-full bg-emerald-950/85 border border-emerald-700 rounded-xl p-2 text-xs text-white placeholder-emerald-400 focus:outline-none focus:border-yellow-400"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Pertanyaan Diskusi -->
+                <div class="bg-emerald-950/60 p-6 rounded-2xl border border-emerald-700 space-y-4">
+                    <h4 class="font-bold text-sm text-yellow-300 border-b border-emerald-800 pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-pen-to-square"></i> Pertanyaan Refleksi Kelompok:
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-1.5">
+                            <label class="text-[11px] font-semibold text-emerald-200">1. Skenario apa saja yang paling efektif menurunkan suhu bumi berdasarkan eksperimen simulator Anda?</label>
+                            <textarea id="group-ans-1" rows="3" placeholder="Tuliskan analisis kombinasi slider Anda di sini..." class="w-full bg-emerald-900/40 border border-emerald-700 rounded-xl p-3 text-xs text-white placeholder-emerald-500 focus:outline-none focus:border-yellow-400"></textarea>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-[11px] font-semibold text-emerald-200">2. Rumuskan minimal 3 aksi nyata yang disepakati kelompok untuk diterapkan langsung di lingkungan sekolah kita!</label>
+                            <textarea id="group-ans-2" rows="3" placeholder="Contoh: Membawa tumbler, mematikan AC kelas setelah jam sekolah..." class="w-full bg-emerald-900/40 border border-emerald-700 rounded-xl p-3 text-xs text-white placeholder-emerald-500 focus:outline-none focus:border-yellow-400"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Validasi Error Box (pengganti alert) -->
+                    <div id="group-form-error" class="hidden text-xs text-rose-300 bg-rose-950/40 p-2 rounded-xl border border-rose-800 text-center font-semibold"></div>
+
+                    <div class="flex justify-end pt-2">
+                        <button onclick="generateGroupReport()" class="bg-yellow-400 hover:bg-yellow-300 text-emerald-950 font-bold px-6 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2 text-xs heading-font">
+                            <i class="fa-solid fa-file-export"></i> Simpan & Tampilkan Laporan Diskusi
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pop-up Laporan Kelompok (Hidden by default) -->
+            <div id="report-popup" class="hidden fixed inset-0 z-[100] bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
+                <div class="bg-white rounded-3xl p-6 md:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto space-y-6 shadow-2xl relative border-4 border-emerald-600">
+                    <button onclick="closeReportPopup()" class="absolute right-4 top-4 text-slate-400 hover:text-slate-600 transition-all">
+                        <i class="fa-solid fa-circle-xmark text-2xl"></i>
+                    </button>
+                    
+                    <div class="text-center border-b pb-4 space-y-1">
+                        <span class="text-3xl">📄</span>
+                        <h3 class="heading-font text-2xl font-bold text-emerald-800">LAPORAN DISKUSI KELOMPOK</h3>
+                        <p class="text-xs text-slate-500">Mata Pelajaran: IPS Kelas 8 | Tema: Faktor Aktivitas Manusia Terhadap Perubahan Iklim</p>
+                        <p class="text-[10px] text-emerald-700 font-semibold uppercase tracking-wider">SMP Muhammadiyah 2 Depok Sleman</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 text-xs bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <div>
+                            <span class="text-slate-400 block font-bold uppercase text-[9px]">Nama Kelompok:</span>
+                            <span id="pop-group-name" class="font-bold text-slate-800 text-sm">-</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block font-bold uppercase text-[9px]">Anggota Kelompok:</span>
+                            <span id="pop-group-members" class="font-semibold text-slate-700">-</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-xs">
+                        <div class="p-4 bg-emerald-50/50 rounded-xl border border-emerald-100">
+                            <h4 class="font-bold text-emerald-950 mb-1">Hasil Eksperimen Simulator:</h4>
+                            <p id="pop-group-ans1" class="text-slate-600 leading-relaxed italic">-</p>
+                        </div>
+                        <div class="p-4 bg-emerald-50/50 rounded-xl border border-emerald-100">
+                            <h4 class="font-bold text-emerald-950 mb-1">Komitmen Aksi Nyata di Sekolah:</h4>
+                            <p id="pop-group-ans2" class="text-slate-600 leading-relaxed italic">-</p>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+                        <div class="text-left">
+                            <span class="text-[10px] text-slate-400 block">Guru Pengampu:</span>
+                            <span class="text-xs font-bold text-slate-700">Khotimatul Qoiriah, S.Pd</span>
+                        </div>
+                        <div class="flex gap-2 w-full sm:w-auto">
+                            <button onclick="window.print()" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-print"></i> Cetak Laporan
+                            </button>
+                            <button onclick="closeReportPopup()" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs transition-all shadow flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-check"></i> Selesai & Tutup
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Kuis Interaktif -->
+        <section id="page-kuis" class="tab-content hidden space-y-6">
+            
+            <!-- Welcome/Start Quiz Panel -->
+            <div id="quiz-start-panel" class="bg-white rounded-3xl p-6 md:p-10 border border-slate-100 shadow-sm text-center max-w-2xl mx-auto space-y-6">
+                <span class="text-6xl animate-bounce inline-block">🏆</span>
+                <div class="space-y-2">
+                    <h2 class="heading-font text-3xl font-bold text-slate-800">Evaluasi Detektif Iklim</h2>
+                    <p class="text-sm text-slate-500">Mari uji pengetahuanmu dalam kuis interaktif 10 level ini. Ada berbagai tipe soal menantang menunggumu!</p>
+                </div>
+
+                <div class="bg-emerald-50 p-4 rounded-2xl text-left border border-emerald-100 space-y-2">
+                    <span class="font-bold text-emerald-800 text-sm block">📋 Panduan Kuis:</span>
+                    <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
+                        <li>Soal 1 - 3: Pilihan Ganda</li>
+                        <li>Soal 4 - 6: Pilihan Ganda Kompleks (Jawaban benar lebih dari satu)</li>
+                        <li>Soal 7: Pengelompokan (Kategori Sahabat Bumi vs Perusak Bumi)</li>
+                        <li>Soal 8 - 9: Menjodohkan (Hubungkan Pernyataan Kiri dengan Kanan)</li>
+                        <li>Soal 10: Pilihan Ganda Penutup</li>
+                    </ul>
+                </div>
+
+                <button onclick="startQuiz()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-2xl shadow-lg transition-all transform hover:-translate-y-0.5 text-base heading-font">
+                    <i class="fa-solid fa-play mr-1"></i> Mulai Kuis Sekarang
+                </button>
+            </div>
+
+            <!-- Main Quiz Runner Container -->
+            <div id="quiz-run-panel" class="hidden bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm max-w-3xl mx-auto space-y-6">
+                <!-- Quiz Progress Bar -->
+                <div class="flex items-center justify-between border-b pb-4">
+                    <div>
+                        <span id="quiz-question-number" class="text-xs font-bold text-emerald-600 uppercase tracking-widest">SOAL 1 DARI 10</span>
+                        <h4 id="quiz-question-type" class="text-xs text-slate-400 font-semibold">Tipe: Pilihan Ganda</h4>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs font-bold text-slate-400">Skor:</span>
+                        <span id="quiz-live-score" class="text-sm font-bold text-yellow-600">0</span>
+                    </div>
+                </div>
+
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                    <div id="quiz-progress-fill" class="bg-emerald-500 h-full transition-all duration-300" style="width: 10%"></div>
+                </div>
+
+                <!-- Question Prompt text -->
+                <div class="space-y-4">
+                    <h3 id="quiz-question-text" class="heading-font text-lg md:text-xl font-bold text-slate-800 leading-snug">
+                        Memuat pertanyaan...
+                    </h3>
+                </div>
+
+                <!-- Dynamic Answer Options Section -->
+                <div id="quiz-options-container" class="space-y-3">
+                    <!-- Options injected here by JS -->
+                </div>
+
+                <!-- Drag and Drop / Tap to Group Section -->
+                <div id="quiz-group-container" class="hidden space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div id="group-bin-sahabat" class="border-2 border-dashed border-emerald-300 bg-emerald-50/50 p-4 rounded-2xl min-h-[150px] flex flex-col items-center justify-center space-y-2">
+                            <span class="text-sm font-bold text-emerald-800">✅ Sahabat Bumi</span>
+                            <div id="group-items-sahabat" class="flex flex-wrap gap-2 justify-center"></div>
+                        </div>
+                        <div id="group-bin-perusak" class="border-2 border-dashed border-red-300 bg-red-50/50 p-4 rounded-2xl min-h-[150px] flex flex-col items-center justify-center space-y-2">
+                            <span class="text-sm font-bold text-red-800">❌ Pemicu Kerusakan</span>
+                            <div id="group-items-perusak" class="flex flex-wrap gap-2 justify-center"></div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-3">
+                        <p class="text-xs text-slate-500">Klik item di bawah ini untuk berpindah kelompok:</p>
+                        <div id="group-pool" class="flex flex-wrap gap-2 justify-center"></div>
+                    </div>
+                </div>
+
+                <!-- Matching Section -->
+                <div id="quiz-matching-container" class="hidden space-y-4">
+                    <p class="text-xs text-slate-500 text-center">Klik satu kotak di sebelah kiri, kemudian klik pasangannya di sebelah kanan!</p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Left items -->
+                        <div id="match-left-column" class="space-y-3"></div>
+                        <!-- Right items -->
+                        <div id="match-right-column" class="space-y-3"></div>
+                    </div>
+                </div>
+
+                <!-- Feedback Area -->
+                <div id="quiz-feedback" class="hidden p-4 rounded-2xl text-xs md:text-sm leading-relaxed border transition-all duration-300 flex items-start gap-3">
+                    <span id="feedback-icon" class="text-xl"></span>
+                    <div>
+                        <span id="feedback-title" class="font-bold block mb-0.5">Jawaban Benar!</span>
+                        <p id="feedback-explanation" class="text-slate-600"></p>
+                    </div>
+                </div>
+
+                <!-- Footer Navigation inside Quiz -->
+                <div class="flex justify-between items-center border-t pt-4">
+                    <button id="quiz-btn-submit" onclick="submitAnswer()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 px-6 rounded-xl transition-all shadow hover:shadow-md">
+                        Kunci Jawaban
+                    </button>
+                    <button id="quiz-btn-next" onclick="nextQuestion()" class="hidden bg-emerald-800 hover:bg-emerald-950 text-white font-bold py-2.5 px-6 rounded-xl transition-all shadow hover:shadow-md">
+                        Lanjut <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Result & Certificate Panel -->
+            <div id="quiz-result-panel" class="hidden bg-white rounded-3xl p-6 md:p-10 border border-slate-100 shadow-lg text-center max-w-2xl mx-auto space-y-6">
+                <span id="result-emoji" class="text-7xl">🏆</span>
+                <div class="space-y-2">
+                    <h2 class="heading-font text-3xl font-bold text-slate-800">Kuis Selesai!</h2>
+                    <p class="text-sm text-slate-500" id="result-message">Selamat, kamu telah menyelesaikan tantangan agen lingkungan!</p>
+                </div>
+
+                <!-- Score Board -->
+                <div class="bg-slate-50 rounded-2xl p-6 max-w-sm mx-auto grid grid-cols-2 gap-4 border border-slate-100">
+                    <div>
+                        <span class="text-xs text-slate-400 block uppercase font-bold">Skor Akhir</span>
+                        <span id="result-score" class="text-4xl font-extrabold text-emerald-600">0</span>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-400 block uppercase font-bold">Benar</span>
+                        <span id="result-correct" class="text-4xl font-extrabold text-slate-800">0 / 10</span>
+                    </div>
+                </div>
+
+                <!-- Certificate Block (Custom SMP Muhammadiyah 2 Depok Sleman) -->
+                <div class="border-4 border-double border-emerald-600 p-6 rounded-2xl bg-emerald-50/50 space-y-4 relative">
+                    <span class="absolute right-4 top-4 text-emerald-200/50 text-7xl font-bold pointer-events-none heading-font">LULUS</span>
+                    <h3 class="heading-font text-xl font-bold text-emerald-950">PIAGAM PENGHARGAAN</h3>
+                    <p class="text-xs text-slate-500">Diberikan sebagai apresiasi kepada siswa hebat atas keberhasilan menyelesaikan pembelajaran materi:</p>
+                    <h4 class="font-bold text-sm text-slate-800 tracking-wide uppercase">Faktor Aktivitas Manusia Terhadap Perubahan Iklim</h4>
+                    <p class="text-xs font-semibold text-emerald-800">SMP Muhammadiyah 2 Depok Sleman, Yogyakarta</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-slate-200/60 text-[10px] text-slate-400">
+                        <span>Verifikasi Sistem: MPI IPS v1.0</span>
+                        <span class="font-bold text-emerald-700">AGEN PENYELAMAT BUMI 🌍</span>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <button onclick="startQuiz()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 rounded-2xl transition-all">
+                        Ulangi Kuis
+                    </button>
+                    <button onclick="switchTab('beranda')" class="w-1/2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-2xl transition-all shadow-md">
+                        Kembali ke Dashboard
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer Branding -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left space-y-1">
+                <p class="font-bold text-slate-200 text-sm">Media Pembelajaran Interaktif (MPI)</p>
+                <p>Materi Perubahan Iklim & Aktivitas Manusia — Kelas 8 SMP/MTs</p>
+                <p class="text-[10px] text-slate-500">Khusus digunakan di lingkungan SMP Muhammadiyah 2 Depok Sleman</p>
+            </div>
+            <div class="flex items-center space-x-3 text-slate-500">
+                <span class="bg-slate-800 p-2 rounded-lg text-yellow-500">
+                    <i class="fa-solid fa-graduation-cap"></i> IPS
+                </span>
+                <span class="bg-slate-800 p-2 rounded-lg text-emerald-500">
+                    <i class="fa-solid fa-shield-halved"></i> Lestari
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Core Web Audio API Sound generator to avoid external asset dependency
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playBeep(type) {
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                if (type === 'success') {
+                    osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+                    osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1); // E5
+                    gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.3);
+                } else if (type === 'fail') {
+                    osc.frequency.setValueAtTime(196.00, audioCtx.currentTime); // G3
+                    gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.2);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.2);
+                }
+            } catch (e) {
+                console.log("Audio contexts pending user interaction.");
+            }
+        }
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            // Show selected tab content
+            document.getElementById(`page-${tabId}`).classList.remove('hidden');
+            document.getElementById(`page-${tabId}`).classList.add('block');
+
+            // Update navigation button active state
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.className = "nav-btn py-3 px-4 text-sm font-semibold transition-all flex items-center gap-2 border-b-4 border-transparent text-emerald-100 hover:text-white";
+            });
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            if (activeBtn) {
+                activeBtn.className = "nav-btn py-3 px-4 text-sm font-semibold transition-all flex items-center gap-2 border-b-4 border-yellow-400 text-yellow-300";
+            }
+        }
+
+        // Materi Sub-tab Switching Logic
+        function switchMateriTab(materiId) {
+            document.querySelectorAll('.materi-panel').forEach(panel => {
+                panel.classList.add('hidden');
+                panel.classList.remove('block');
+            });
+            document.getElementById(`materi-${materiId}`).classList.remove('hidden');
+            document.getElementById(`materi-${materiId}`).classList.add('block');
+
+            document.querySelectorAll('.mat-tab-btn').forEach(btn => {
+                btn.className = "mat-tab-btn px-4 py-2 text-xs md:text-sm font-semibold rounded-xl transition-all bg-white text-slate-600 hover:bg-slate-50 border";
+            });
+            document.getElementById(`mat-btn-${materiId}`).className = "mat-tab-btn px-4 py-2 text-xs md:text-sm font-semibold rounded-xl transition-all bg-emerald-600 text-white shadow";
+        }
+
+        // Climate Simulator Logic
+        function updateSimulation() {
+            const fosil = parseInt(document.getElementById('slide-fosil').value);
+            const hutan = parseInt(document.getElementById('slide-hutan').value);
+            const ternak = parseInt(document.getElementById('slide-ternak').value);
+
+            // Update UI value labels
+            const labels = ["Sedikit", "Sedang", "Banyak"];
+            const forestLabels = ["Lestari", "Sedang", "Gundul & Dibakar"];
+            document.getElementById('val-fosil').innerText = labels[fosil - 1];
+            document.getElementById('val-hutan').innerText = forestLabels[hutan - 1];
+            document.getElementById('val-ternak').innerText = labels[ternak - 1];
+
+            // Calculations based on slider inputs
+            // Base temperature raise from +0.5°C up to +3.5°C
+            let tempDeviation = 0.5 + ((fosil - 1) * 1.0) + ((hutan - 1) * 0.8) + ((ternak - 1) * 0.7);
+            tempDeviation = Math.round(tempDeviation * 10) / 10;
+
+            // Ice sheet melting percentage
+            let iceMelting = 10 + ((fosil - 1) * 25) + ((hutan - 1) * 15) + ((ternak - 1) * 10);
+            iceMelting = Math.min(iceMelting, 100);
+
+            // Remaining Forest percentage
+            let forestPercentage = 95 - ((hutan - 1) * 35) - ((fosil - 1) * 10);
+            forestPercentage = Math.max(forestPercentage, 10);
+
+            // Update Dashboard gauges
+            document.getElementById('sim-temp').innerText = `+${tempDeviation} °C`;
+            const tempBar = document.getElementById('sim-temp-bar');
+            tempBar.style.width = `${Math.min((tempDeviation / 3.5) * 100, 100)}%`;
+            if (tempDeviation > 2.5) {
+                tempBar.className = "bg-rose-600 h-full transition-all duration-500";
+            } else if (tempDeviation > 1.5) {
+                tempBar.className = "bg-amber-500 h-full transition-all duration-500";
+            } else {
+                tempBar.className = "bg-emerald-500 h-full transition-all duration-500";
+            }
+
+            document.getElementById('sim-ice').innerText = `${iceMelting}%`;
+            document.getElementById('sim-ice-bar').style.width = `${iceMelting}%`;
+
+            document.getElementById('sim-forest').innerText = `${forestPercentage}%`;
+            document.getElementById('sim-forest-bar').style.width = `${forestPercentage}%`;
+
+            // Earth Emoji Reaction & Analysis texts
+            const earthEmoji = document.getElementById('sim-earth-emoji');
+            const earthDesc = document.getElementById('sim-earth-desc');
+            const statusBadge = document.getElementById('status-badge');
+            const analysisText = document.getElementById('sim-analysis');
+
+            if (tempDeviation <= 1.0) {
+                earthEmoji.innerText = "😊";
+                earthDesc.innerText = "Bumi Hijau Lestari";
+                statusBadge.innerText = "Bumi Aman Lestari";
+                statusBadge.className = "bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-bold";
+                analysisText.innerText = "Aktivitas ramah lingkungan terjaga! Suhu bumi seimbang, es kutub stabil, curah hujan normal dan ekosistem di Sleman tetap bersahabat untuk kehidupan masyarakat.";
+            } else if (tempDeviation <= 2.2) {
+                earthEmoji.innerText = "🥵";
+                earthDesc.innerText = "Bumi Gerah & Haus";
+                statusBadge.innerText = "Pemanasan Global Sedang";
+                statusBadge.className = "bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full font-bold";
+                analysisText.innerText = "Suhu bumi meningkat! Es kutub mulai mencair, siklus cuaca mulai kacau menyebabkan kekeringan di sebagian wilayah pertanian dan musim hujan yang tidak menentu.";
+            } else {
+                earthEmoji.innerText = "🤒🔥";
+                earthDesc.innerText = "Bumi Sakit & Terbakar";
+                statusBadge.innerText = "Darurat Iklim Global!";
+                statusBadge.className = "bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full font-bold animate-pulse";
+                analysisText.innerText = "DARURAT! Hutan gundul hebat dan emisi batubara berlebih memicu efek rumah kaca ekstrem. Gelombang panas melanda, es kutub melarut deras, memicu banjir pesisir parah dan kegagalan pangan meluas!";
+            }
+        }
+
+        // Group Activity Logic
+        function showRoleDuty(role) {
+            const display = document.getElementById('role-duty-display');
+            if (role === 'ahli-energi') {
+                display.innerHTML = "<strong>🚗 Tugas Ahli Energi:</strong> Diskusikan bagaimana cara mengurangi penggunaan bahan bakar fosil, hemat listrik di sekolah, dan beralih ke jalan kaki/sepeda.";
+            } else if (role === 'ahli-kehutanan') {
+                display.innerHTML = "<strong>🌳 Tugas Pelindung Hutan:</strong> Analisis mengapa reboisasi sangat krusial menyerap karbon dan rumuskan kampanye anti-pembakaran hutan serta konservasi di sekolah.";
+            } else if (role === 'ahli-pertanian') {
+                display.innerHTML = "<strong>🐄 Tugas Duta Sampah & Konsumsi:</strong> Temukan solusi penanganan pupuk kimia berlebih, kurangi pemborosan makanan (food waste), dan pemilahan sampah kelas.";
+            }
+            display.className = "bg-emerald-950/90 p-3 rounded-xl border border-emerald-500 text-[10px] text-emerald-100 min-h-[60px] flex items-center justify-center text-left transition-all duration-300";
+        }
+
+        function generateGroupReport() {
+            const groupName = document.getElementById('group-name').value.trim();
+            const groupMembers = document.getElementById('group-members').value.trim();
+            const ans1 = document.getElementById('group-ans-1').value.trim();
+            const ans2 = document.getElementById('group-ans-2').value.trim();
+            const errorEl = document.getElementById('group-form-error');
+
+            if (!groupName || !groupMembers || !ans1 || !ans2) {
+                playBeep('fail');
+                errorEl.innerText = "⚠️ Harap lengkapi semua kolom isian (Nama Kelompok, Anggota, dan Seluruh Jawaban Diskusi) sebelum mengirim!";
+                errorEl.classList.remove('hidden');
+                return;
+            }
+
+            errorEl.classList.add('hidden');
+            
+            // Populate Pop-up
+            document.getElementById('pop-group-name').innerText = groupName;
+            document.getElementById('pop-group-members').innerText = groupMembers;
+            document.getElementById('pop-group-ans1').innerText = ans1;
+            document.getElementById('pop-group-ans2').innerText = ans2;
+
+            // Show Popup Modal
+            document.getElementById('report-popup').classList.remove('hidden');
+            playBeep('success');
+        }
+
+        function closeReportPopup() {
+            document.getElementById('report-popup').classList.add('hidden');
+        }
+
+        // Kuis Interaktif Database (10 Questions structured dynamically)
+        const quizQuestions = [
+            {
+                id: 1,
+                type: "pg",
+                question: "Dari sektor energi berikut, aktivitas harian manusia manakah yang menghasilkan emisi gas Karbon Dioksida (CO₂) terbesar ke atmosfer?",
+                options: [
+                    "Penggunaan pupuk kimia buatan pada padi",
+                    "Pembakaran bahan bakar fosil oleh kendaraan dan pabrik",
+                    "Pembalikan tanah di lahan pertanian baru",
+                    "Penyimpanan air sisa rumah tangga di bak terbuka"
+                ],
+                answer: 1,
+                explanation: "Pembakaran bahan bakar fosil (minyak bumi, batu bara, gas alam) untuk transportasi dan pabrik industri melepaskan Karbon Dioksida (CO₂) dalam jumlah terbesar di bumi, menjadikannya pemicu utama Efek Rumah Kaca."
+            },
+            {
+                id: 2,
+                type: "pg",
+                question: "Jika jutaan hektar hutan di Indonesia terus ditebang dan dibakar (deforestasi), dampak langsung apa yang akan terjadi pada siklus karbon di bumi?",
+                options: [
+                    "Oksigen melimpah dan karbon diserap tanah",
+                    "Konsentrasi CO₂ di atmosfer melesat naik karena hilangnya penyerap alami",
+                    "Suhu bumi akan mendingin karena berkurangnya pohon",
+                    "Sinar matahari tidak lagi mampu masuk ke permukaan bumi"
+                ],
+                answer: 1,
+                explanation: "Pohon adalah penyerap karbon dioksida alami. Saat hutan gundul dan dibakar, kemampuan bumi menyerap CO₂ hilang, sekaligus karbon di dalam pohon justru terlepas kembali ke udara, mempercepat pemanasan global."
+            },
+            {
+                id: 3,
+                type: "pg",
+                question: "Sektor peternakan (terutama hewan ruminansia seperti sapi) menyumbangkan salah satu gas rumah kaca yang sangat kuat. Gas apakah yang dimaksud?",
+                options: [
+                    "Klorofluorokarbon (CFC)",
+                    "Gas Nitrogen Oksida (N₂O)",
+                    "Gas Metana (CH₄) dari sendawa dan kotorannya",
+                    "Gas Hidrogen"
+                ],
+                answer: 2,
+                explanation: "Peternakan sapi menghasilkan gas Metana (CH₄) melalui pencernaan (sendawa) dan penguraian kotorannya. Gas ini memiliki daya rusak merangkap panas jauh lebih kuat dari CO₂."
+            },
+            {
+                id: 4,
+                type: "pg-kompleks",
+                question: "Mana sajakah aktivitas manusia di bawah ini yang tergolong sebagai pemicu meningkatnya Emisi Gas Rumah Kaca secara signifikan? (Pilih semua jawaban benar!)",
+                options: [
+                    "Membakar sampah daun dan plastik di pekarangan rumah",
+                    "Menggunakan transportasi umum atau bersepeda untuk bepergian",
+                    "Penggunaan pendingin udara (AC) yang mengandung freon/CFC secara berlebih",
+                    "Melakukan penanaman pohon serentak di halaman sekolah"
+                ],
+                answers: [0, 2],
+                explanation: "Membakar sampah menghasilkan CO₂ dan AC dengan zat pendingin kimia melepas CFC yang dapat merusak lapisan atmosfer. Sedangkan naik transportasi umum dan menanam pohon merupakan tindakan mitigasi (solusi)."
+            },
+            {
+                id: 5,
+                type: "pg-kompleks",
+                question: "Perubahan iklim memicu berbagai dampak destruktif bagi kehidupan masyarakat Indonesia. Manakah dampak langsung yang dirasakan petani dan masyarakat pesisir? (Pilih semua jawaban benar!)",
+                options: [
+                    "Gagal panen padi akibat cuaca kemarau ekstrem yang tidak menentu",
+                    "Meningkatnya luas daratan karena penguapan air laut",
+                    "Naiknya permukaan air laut memicu abrasi dan banjir rob di permukiman pesisir",
+                    "Suhu udara menjadi sangat dingin sepanjang tahun di daerah tropis"
+                ],
+                answers: [0, 2],
+                explanation: "Perubahan iklim memicu musim kemarau ekstrem (menyebabkan gagal panen) serta mencairnya es kutub yang menaikkan permukaan air laut sehingga menimbulkan abrasi dan banjir rob."
+            },
+            {
+                id: 6,
+                type: "pg-kompleks",
+                question: "Sebagai siswa SMP Muhammadiyah 2 Depok Sleman, tindakan mitigasi kreatif apa saja yang dapat kamu lakukan langsung di sekolah? (Pilih semua jawaban benar!)",
+                options: [
+                    "Menolak memilah sampah plastik dan organik di kelas",
+                    "Mematikan lampu kelas dan kipas angin jika ruangan tidak digunakan",
+                    "Membawa botol minum isi ulang (tumbler) untuk mengurangi sampah plastik sekali pakai",
+                    "Menyarankan pembakaran sampah daun kering di lapangan sekolah"
+                ],
+                answers: [1, 2],
+                explanation: "Mematikan listrik menghemat energi pembakaran batu bara, dan memakai tumbler mengurangi sampah plastik. Pembakaran sampah daun justru melepaskan CO₂ dan asap kotor."
+            },
+            {
+                id: 7,
+                type: "group",
+                question: "Kelompokkan aktivitas berikut dengan tepat! Klasifikasikan mana tindakan 'Sahabat Bumi (Solusi)' dan mana 'Pemicu Kerusakan'.",
+                items: [
+                    { text: "Bersepeda ke sekolah", group: "sahabat" },
+                    { text: "Bakar sampah plastik", group: "perusak" },
+                    { text: "Menanam pohon di pot", group: "sahabat" },
+                    { text: "Menyalakan AC seharian", group: "perusak" }
+                ],
+                explanation: "Bersepeda bebas emisi karbon dan menanam pohon menyerap CO₂ (Sahabat Bumi). Membakar sampah menghasilkan polusi gas CO₂ serta menyalakan AC berlebih meningkatkan emisi listrik dan CFC (Pemicu Kerusakan)."
+            },
+            {
+                id: 8,
+                type: "matching",
+                question: "Jodohkan aktivitas manusia di sebelah kiri dengan jenis Gas Rumah Kaca utama yang dikeluarkannya!",
+                left: ["Transportasi Motor", "Peternakan Sapi", "Penggunaan AC Lama"],
+                right: ["Metana (CH₄)", "Karbon Dioksida (CO₂)", "Klorofluorokarbon (CFC)"],
+                pairs: {
+                    "Transportasi Motor": "Karbon Dioksida (CO₂)",
+                    "Peternakan Sapi": "Metana (CH₄)",
+                    "Penggunaan AC Lama": "Klorofluorokarbon (CFC)"
+                },
+                explanation: "Kecocokan yang tepat: Pembakaran motor melepas CO₂; Sendawa/kotoran sapi melepas Metana (CH₄); Gas pendingin pendingin AC konvensional melepas CFC."
+            },
+            {
+                id: 9,
+                type: "matching",
+                question: "Jodohkan masalah lingkungan berikut dengan solusi mitigasi yang paling tepat untuk mengatasinya!",
+                left: ["Lahan Hutan Gundul", "Sampah Organik Menumpuk", "Banyak Asap Kendaraan"],
+                right: ["Membuat Kompos Organik", "Beralih ke Transportasi Umum", "Reboisasi (Penanaman Kembali)"],
+                pairs: {
+                    "Lahan Hutan Gundul": "Reboisasi (Penanaman Kembali)",
+                    "Sampah Organik Menumpuk": "Membuat Kompos Organik",
+                    "Banyak Asap Kendaraan": "Beralih ke Transportasi Umum"
+                },
+                explanation: "Solusi tepat: Lahan gundul disembuhkan lewat reboisasi; Sampah organik diolah menjadi kompos; Asap kendaraan dikurangi dengan menggunakan transportasi umum."
+            },
+            {
+                id: 10,
+                type: "pg",
+                question: "Apa kesimpulan terpenting dari keterkaitan aktivitas manusia dengan perubahan iklim global bagi masa depan kita?",
+                options: [
+                    "Aktivitas manusia tidak berpengaruh karena alam memulihkan diri sendiri",
+                    "Perubahan iklim sepenuhnya dikendalikan oleh siklus matahari tanpa campur tangan manusia",
+                    "Setiap tindakan kecil konsumsi energi kita berdampak besar pada suhu bumi; mitigasi kolektif sangat penting",
+                    "Tidak ada solusi mitigasi yang bisa dilakukan lagi karena kerusakan bumi sudah permanen"
+                ],
+                answer: 2,
+                explanation: "Kesimpulan utamanya adalah tindakan kecil kita secara kolektif berkontribusi pada kestabilan iklim. Melakukan mitigasi sejak dini adalah kunci masa depan bumi yang layak huni."
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let correctAnswersCount = 0;
+        let selectedOptions = []; // For multi-choice/PG Kompleks
+        let selectedMatchingLeft = null;
+        let selectedMatchingRight = null;
+        let matchingPairsState = {}; // Temp store for matches made
+        let groupItemsState = []; // For sorting activity
+
+        function startQuiz() {
+            // Reset states
+            currentQuestionIndex = 0;
+            score = 0;
+            correctAnswersCount = 0;
+            
+            document.getElementById('quiz-start-panel').classList.add('hidden');
+            document.getElementById('quiz-result-panel').classList.add('hidden');
+            document.getElementById('quiz-run-panel').classList.remove('hidden');
+            
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = quizQuestions[currentQuestionIndex];
+            
+            // Progress Update
+            document.getElementById('quiz-question-number').innerText = `SOAL ${currentQuestionIndex + 1} DARI 10`;
+            document.getElementById('quiz-live-score').innerText = score;
+            document.getElementById('quiz-progress-fill').style.width = `${(currentQuestionIndex + 1) * 10}%`;
+            
+            // Hide everything first
+            document.getElementById('quiz-options-container').classList.add('hidden');
+            document.getElementById('quiz-options-container').innerHTML = '';
+            document.getElementById('quiz-group-container').classList.add('hidden');
+            document.getElementById('quiz-matching-container').classList.add('hidden');
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            
+            // Reset buttons
+            document.getElementById('quiz-btn-submit').classList.remove('hidden');
+            document.getElementById('quiz-btn-next').classList.add('hidden');
+
+            document.getElementById('quiz-question-text').innerText = q.question;
+            
+            // Configure based on type
+            if (q.type === "pg") {
+                document.getElementById('quiz-question-type').innerText = "Tipe: Pilihan Ganda (Pilih 1 jawaban terbaik)";
+                document.getElementById('quiz-options-container').classList.remove('hidden');
+                
+                q.options.forEach((opt, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 transition-all text-sm flex items-center justify-between group";
+                    btn.onclick = () => selectPG(idx);
+                    btn.id = `opt-btn-${idx}`;
+                    btn.innerHTML = `
+                        <span>${opt}</span>
+                        <div class="w-5 h-5 rounded-full border border-slate-300 group-hover:border-emerald-500 flex items-center justify-center">
+                            <div class="w-3 h-3 rounded-full bg-emerald-600 hidden" id="opt-dot-${idx}"></div>
+                        </div>
+                    `;
+                    document.getElementById('quiz-options-container').appendChild(btn);
+                });
+                selectedOptions = [-1]; // Reset selection
+                
+            } else if (q.type === "pg-kompleks") {
+                document.getElementById('quiz-question-type').innerText = "Tipe: Pilihan Ganda Kompleks (Pilih 2 atau lebih jawaban benar)";
+                document.getElementById('quiz-options-container').classList.remove('hidden');
+                
+                q.options.forEach((opt, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 transition-all text-sm flex items-center justify-between group";
+                    btn.onclick = () => togglePGKompleks(idx);
+                    btn.id = `opt-btn-${idx}`;
+                    btn.innerHTML = `
+                        <span>${opt}</span>
+                        <div class="w-5 h-5 rounded border border-slate-300 group-hover:border-emerald-500 flex items-center justify-center">
+                            <div class="w-3 h-3 bg-emerald-600 hidden" id="opt-check-${idx}"></div>
+                        </div>
+                    `;
+                    document.getElementById('quiz-options-container').appendChild(btn);
+                });
+                selectedOptions = []; // Reset selection
+
+            } else if (q.type === "group") {
+                document.getElementById('quiz-question-type').innerText = "Tipe: Pengelompokan Interaktif (Kelompokkan Semua Item)";
+                document.getElementById('quiz-group-container').classList.remove('hidden');
+                
+                // Set up temporary list state
+                groupItemsState = q.items.map((it, idx) => ({ ...it, id: idx, currentGroup: "pool" }));
+                renderGroupSorting();
+
+            } else if (q.type === "matching") {
+                document.getElementById('quiz-question-type').innerText = "Tipe: Menjodohkan (Klik Kiri, lalu pasangkan ke Kanan)";
+                document.getElementById('quiz-matching-container').classList.remove('hidden');
+                
+                selectedMatchingLeft = null;
+                selectedMatchingRight = null;
+                matchingPairsState = {};
+                
+                renderMatching();
+            }
+        }
+
+        // Interactive selection handlers
+        function selectPG(idx) {
+            document.querySelectorAll('[id^="opt-dot-"]').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('[id^="opt-btn-"]').forEach(btn => btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 transition-all text-sm flex items-center justify-between group");
+            
+            document.getElementById(`opt-dot-${idx}`).classList.remove('hidden');
+            document.getElementById(`opt-btn-${idx}`).className = "w-full text-left p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 transition-all text-sm flex items-center justify-between group";
+            selectedOptions = [idx];
+        }
+
+        function togglePGKompleks(idx) {
+            const check = document.getElementById(`opt-check-${idx}`);
+            const btn = document.getElementById(`opt-btn-${idx}`);
+            
+            if (selectedOptions.includes(idx)) {
+                selectedOptions = selectedOptions.filter(item => item !== idx);
+                check.classList.add('hidden');
+                btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 transition-all text-sm flex items-center justify-between group";
+            } else {
+                selectedOptions.push(idx);
+                check.classList.remove('hidden');
+                btn.className = "w-full text-left p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 transition-all text-sm flex items-center justify-between group";
+            }
+        }
+
+        // Sorting Activities logic
+        function renderGroupSorting() {
+            const pool = document.getElementById('group-pool');
+            const binSahabat = document.getElementById('group-items-sahabat');
+            const binPerusak = document.getElementById('group-items-perusak');
+            
+            pool.innerHTML = '';
+            binSahabat.innerHTML = '';
+            binPerusak.innerHTML = '';
+
+            groupItemsState.forEach(item => {
+                const badge = document.createElement('button');
+                badge.className = "px-3 py-2 bg-white border border-slate-200 text-slate-700 rounded-xl text-xs font-semibold shadow-sm hover:bg-slate-50 transition-all cursor-pointer";
+                badge.innerText = item.text;
+                badge.onclick = () => {
+                    // Cycle group allocation
+                    if (item.currentGroup === "pool") item.currentGroup = "sahabat";
+                    else if (item.currentGroup === "sahabat") item.currentGroup = "perusak";
+                    else item.currentGroup = "pool";
+                    renderGroupSorting();
+                };
+
+                if (item.currentGroup === "pool") {
+                    pool.appendChild(badge);
+                } else if (item.currentGroup === "sahabat") {
+                    badge.className = "px-3 py-2 bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-xl text-xs font-semibold shadow-sm cursor-pointer";
+                    binSahabat.appendChild(badge);
+                } else {
+                    badge.className = "px-3 py-2 bg-red-100 text-red-800 border border-red-200 rounded-xl text-xs font-semibold shadow-sm cursor-pointer";
+                    binPerusak.appendChild(badge);
+                }
+            });
+        }
+
+        // Menjodohkan (Matching Game) render logic
+        function renderMatching() {
+            const leftCol = document.getElementById('match-left-column');
+            const rightCol = document.getElementById('match-right-column');
+            const q = quizQuestions[currentQuestionIndex];
+            
+            leftCol.innerHTML = '';
+            rightCol.innerHTML = '';
+
+            // Render Left Column (Activities)
+            q.left.forEach(leftItem => {
+                const btn = document.createElement('button');
+                const matchedVal = matchingPairsState[leftItem];
+                
+                let btnStyle = "w-full text-center p-3 rounded-xl border border-slate-200 text-xs font-semibold transition-all ";
+                if (matchedVal) {
+                    btnStyle += "bg-emerald-50 text-emerald-800 border-emerald-300";
+                } else if (selectedMatchingLeft === leftItem) {
+                    btnStyle += "bg-yellow-100 text-yellow-800 border-yellow-400 border-2 scale-102";
+                } else {
+                    btnStyle += "bg-slate-50 hover:bg-slate-100 text-slate-700";
+                }
+
+                btn.className = btnStyle;
+                btn.innerHTML = `${leftItem} ${matchedVal ? '🔗' : ''}`;
+                btn.onclick = () => {
+                    if (matchedVal) {
+                        // Unlink if clicked again
+                        delete matchingPairsState[leftItem];
+                        selectedMatchingLeft = null;
+                    } else {
+                        selectedMatchingLeft = leftItem;
+                    }
+                    renderMatching();
+                };
+                leftCol.appendChild(btn);
+            });
+
+            // Render Right Column (Targets)
+            q.right.forEach(rightItem => {
+                const btn = document.createElement('button');
+                // Check if this item is already matched to anything on left
+                const isMatched = Object.values(matchingPairsState).includes(rightItem);
+                
+                let btnStyle = "w-full text-center p-3 rounded-xl border border-slate-200 text-xs font-semibold transition-all ";
+                if (isMatched) {
+                    btnStyle += "bg-emerald-50 text-emerald-800 border-emerald-300";
+                } else if (selectedMatchingRight === rightItem) {
+                    btnStyle += "bg-yellow-100 text-yellow-800 border-yellow-400 border-2 scale-102";
+                } else {
+                    btnStyle += "bg-slate-50 hover:bg-slate-100 text-slate-700";
+                }
+
+                btn.className = btnStyle;
+                btn.innerText = rightItem;
+                btn.onclick = () => {
+                    if (isMatched) return; // Cant select matched items
+                    
+                    if (selectedMatchingLeft) {
+                        // Lock pairing
+                        matchingPairsState[selectedMatchingLeft] = rightItem;
+                        selectedMatchingLeft = null;
+                        selectedMatchingRight = null;
+                        playBeep('success');
+                    } else {
+                        selectedMatchingRight = rightItem;
+                    }
+                    renderMatching();
+                };
+                rightCol.appendChild(btn);
+            });
+        }
+
+        // Submit answers verification
+        function submitAnswer() {
+            const q = quizQuestions[currentQuestionIndex];
+            let isCorrect = false;
+            let feedbackText = q.explanation;
+            
+            // Disable further modification by hiding submit
+            document.getElementById('quiz-btn-submit').classList.add('hidden');
+            document.getElementById('quiz-btn-next').classList.remove('hidden');
+
+            if (q.type === "pg") {
+                const userAns = selectedOptions[0];
+                if (userAns === q.answer) {
+                    isCorrect = true;
+                    score += 10;
+                    correctAnswersCount++;
+                }
+                
+                // Show color coding on option buttons
+                q.options.forEach((_, idx) => {
+                    const btn = document.getElementById(`opt-btn-${idx}`);
+                    if (idx === q.answer) {
+                        btn.className = "w-full text-left p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-950 text-sm font-semibold flex items-center justify-between";
+                    } else if (idx === userAns) {
+                        btn.className = "w-full text-left p-4 rounded-xl border-2 border-red-500 bg-red-50 text-red-950 text-sm flex items-center justify-between";
+                    }
+                });
+
+            } else if (q.type === "pg-kompleks") {
+                // Check if arrays match completely
+                const ans = q.answers;
+                const isMatch = ans.length === selectedOptions.length && ans.every(v => selectedOptions.includes(v));
+                if (isMatch) {
+                    isCorrect = true;
+                    score += 10;
+                    correctAnswersCount++;
+                }
+
+                // Color code all selected options
+                q.options.forEach((_, idx) => {
+                    const btn = document.getElementById(`opt-btn-${idx}`);
+                    if (ans.includes(idx)) {
+                        btn.className = "w-full text-left p-4 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-950 text-sm font-semibold flex items-center justify-between";
+                    } else if (selectedOptions.includes(idx)) {
+                        btn.className = "w-full text-left p-4 rounded-xl border-2 border-red-500 bg-red-50 text-red-950 text-sm flex items-center justify-between";
+                    }
+                });
+
+            } else if (q.type === "group") {
+                // Verify all items are grouped correctly
+                const unplaced = groupItemsState.some(it => it.currentGroup === "pool");
+                if (unplaced) {
+                    feedbackText = "Oops! Ada aktivitas yang belum dikelompokkan. " + feedbackText;
+                } else {
+                    const hasError = groupItemsState.some(it => it.currentGroup !== it.group);
+                    if (!hasError) {
+                        isCorrect = true;
+                        score += 10;
+                        correctAnswersCount++;
+                    }
+                }
+
+                // Reveal true styling visually
+                renderGroupSortingAfterSubmit();
+
+            } else if (q.type === "matching") {
+                // Compare matchingPairsState with q.pairs
+                let allMatch = true;
+                let countCorrect = 0;
+                
+                Object.keys(q.pairs).forEach(key => {
+                    if (matchingPairsState[key] === q.pairs[key]) {
+                        countCorrect++;
+                    } else {
+                        allMatch = false;
+                    }
+                });
+
+                if (countCorrect === Object.keys(q.pairs).length) {
+                    isCorrect = true;
+                    score += 10;
+                    correctAnswersCount++;
+                } else {
+                    feedbackText = `Kamu berhasil menjodohkan ${countCorrect} dari ${Object.keys(q.pairs).length} pasang secara benar! ` + feedbackText;
+                }
+            }
+
+            // Audio cues & UI feedback rendering
+            const feedbackEl = document.getElementById('quiz-feedback');
+            const feedbackIcon = document.getElementById('feedback-icon');
+            const feedbackTitle = document.getElementById('feedback-title');
+            const feedbackExplanation = document.getElementById('feedback-explanation');
+
+            feedbackEl.classList.remove('hidden');
+            if (isCorrect) {
+                playBeep('success');
+                feedbackEl.className = "p-4 rounded-2xl text-xs md:text-sm leading-relaxed border bg-emerald-50 border-emerald-200 text-emerald-800 flex items-start gap-3";
+                feedbackIcon.innerText = "🎉";
+                feedbackTitle.innerText = "Jawaban Tepat!";
+            } else {
+                playBeep('fail');
+                feedbackEl.className = "p-4 rounded-2xl text-xs md:text-sm leading-relaxed border bg-rose-50 border-rose-200 text-rose-800 flex items-start gap-3";
+                feedbackIcon.innerText = "💡";
+                feedbackTitle.innerText = "Belum Tepat!";
+            }
+            feedbackExplanation.innerHTML = feedbackText;
+            document.getElementById('quiz-live-score').innerText = score;
+        }
+
+        // Show right categories in styling on submit for Groups
+        function renderGroupSortingAfterSubmit() {
+            const binSahabat = document.getElementById('group-items-sahabat');
+            const binPerusak = document.getElementById('group-items-perusak');
+            
+            binSahabat.innerHTML = '';
+            binPerusak.innerHTML = '';
+
+            groupItemsState.forEach(item => {
+                const b = document.createElement('div');
+                b.className = "px-3 py-2 rounded-xl text-xs font-semibold shadow-sm text-center ";
+                b.innerText = item.text;
+                
+                // Style according to true correctness
+                if (item.currentGroup === item.group) {
+                    b.className += "bg-emerald-100 text-emerald-800 border-2 border-emerald-400";
+                } else {
+                    b.className += "bg-rose-100 text-rose-800 border-2 border-rose-400";
+                }
+
+                if (item.currentGroup === "sahabat") binSahabat.appendChild(b);
+                else binPerusak.appendChild(b);
+            });
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizQuestions.length) {
+                showQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById('quiz-run-panel').classList.add('hidden');
+            document.getElementById('quiz-result-panel').classList.remove('hidden');
+
+            document.getElementById('result-score').innerText = score;
+            document.getElementById('result-correct').innerText = `${correctAnswersCount} / 10`;
+
+            const emoji = document.getElementById('result-emoji');
+            const msg = document.getElementById('result-message');
+
+            if (score >= 80) {
+                emoji.innerText = "👑🏆🥇";
+                msg.innerText = "Luar biasa! Kamu layak menjadi Duta Lingkungan SMP Muhammadiyah 2 Depok Sleman!";
+            } else if (score >= 60) {
+                emoji.innerText = "🌟🥈🥉";
+                msg.innerText = "Kerja bagus! Sedikit belajar lagi untuk menjadi pembela iklim yang lebih tangguh.";
+            } else {
+                emoji.innerText = "📚🏃‍♂️";
+                msg.innerText = "Tetap semangat! Coba ulas kembali materi di tab Eksplorasi dan ulangi simulasi iklim.";
+            }
+        }
+
+        // Initial setup on load
+        window.onload = function() {
+            updateSimulation();
+        }
+    </script>
+</body>
+</html>
